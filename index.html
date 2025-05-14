@@ -2,41 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>IDE AI PIN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IDE1 AI Pin</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    /* Soft dark background and text */
     body {
-      background-color: #2b2b2b;
-      color: #e0e0e0;
-      padding: 0px;
+      background-color: #374153;
+      color: #fff;
     }
-
-    .documentDIV {
-    margin: 10px,10px,0px,10px;
-    padding: 60px;
-    border: 2px solid #1c1c1c;
-    border-radius: 30px;
-    height: 620px;
-    overflow-y: scroll;
+    .sidebar {
+      background-color: #151c28;
+       min-height: 100vh;
+  padding-top: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+    }
+    .sidebar h5 {
+      padding: 1rem;
+      font-weight: bold;
+      border-bottom: 1px solid #333;
+    }
+    .treeview li {
+      list-style: none;
+      padding: 0.25rem 1.5rem;
+      cursor: pointer;
+    }
+    .treeview li:hover {
+      background-color: #2a2d35;
+    }
+    .active-item {
+      background-color: #3a3f4a;
+      border-radius: 0.375rem;
+      padding: 0.5rem 1rem;
+      margin: 0.25rem 0;
+      display: block;
+      color: #fff;
+      text-decoration: none;
+    }
+    .content-container {
+      background-color: #f5f5f7;
+      color: #000;
+      border-radius: 0.75rem;
+      padding: 2rem;
+      margin: 2rem;
+    }
+    .content-container h2 {
+      font-weight: bold;
+    }
+    /* Add media query to make sidebar collapse on small screens */
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none; /* Hides the sidebar on smaller screens */
+      }
+      .main-content {
+        margin-left: 0;
+      }
+    }
     
+    .file-tree {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 14px;
+  margin-top: 10px;
 }
+
+.file-tree li {
+  margin: 5px 0;
+}
+
+
+.documentDIV{
+    overflow-y: scroll;
+    height: 620px;
+}
+
 .documentDIV::-webkit-scrollbar {
     width: 10px;
 }
 
 .documentDIV::-webkit-scrollbar-track {
-    background: #1c1c1c;
+    background: #ffffff00;
     border-radius: 10px;
 }
 
 .documentDIV::-webkit-scrollbar-thumb {
-    background: #444;
+    background: #151c2885;
     border-radius: 10px;
 }
 
 .documentDIV::-webkit-scrollbar-thumb:hover {
-    background: #666;
+    background: #4e5f7d85;
 }
 
     .media-box {
@@ -48,49 +103,9 @@
 
     .text-line {
       height: 10px;
-      background-color: #555;
+      background-color: #b1b1b1;
       margin-bottom: 10px;
     }
-
-    .vertical-line {
-      border-left: 2px solid #777;
-      height: 100%;
-      margin: 0 auto;
-    }
-
-    .form-control, .btn {
-      background-color: #3b3b3b;
-      color: #e0e0e0;
-      border-color: #666;
-    }
-
-    .form-control::placeholder {
-      color: #bbb;
-    }
-
-    .btn-outline-secondary {
-      border-color: #888;
-      color: #ddd;
-    }
-
-    .btn-outline-secondary:hover {
-      background-color: #4c4c4c;
-    }
-
-    .text-muted {
-      color: #aaa !important;
-    }
-
-    .file-tree {
-  list-style-type: none;
-  padding-left: 0;
-  font-size: 14px;
-  margin-top: 10px;
-}
-
-.file-tree li {
-  margin: 5px 0;
-}
 
 .folder-name {
   cursor: pointer;
@@ -116,22 +131,18 @@
 .document a:hover {
   text-decoration: underline;
 }
-
   </style>
 </head>
-<body class="p-4">
-  <!-- Content Section -->
-  <div class="row g-4">
-    <!-- Left Panel -->
-    <div class="col-md-4">
-        <div class="d-flex flex-column align-items-start" style="max-width: 400px; width: 100%;">
-            <div class="input-group mb-3" style="width: 100%;">
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <nav class="col-md-3 col-lg-3 sidebar d-flex flex-column">
+        <div class="input-group mb-3" style="width: 100%;">
                 <input type="text" class="form-control" id="search-input" placeholder="Search">
                 <button class="btn btn-outline-secondary">🔍</button>
             </div>
-            
-          <!-- Tree structure -->
-          <ul class="file-tree w-100" id="file-tree">
+        <ul class="file-tree w-100" id="file-tree">
             <li class="folder open">
               <span class="folder-name">Denmark</span>
               <ul>
@@ -144,12 +155,18 @@
                             <li class="folder">
                             <span class="folder-name">Production Line 1</span>
                             <ul>
+                               <li class="folder">
+                                    <span class="folder-name">HP-200 1[ID: 388chh-ddkdss-hsj8]</span>
+                                    <ul id="documentList">
+                                      <li class="document" data-filename="Fixing Problem Regarding Oil Leakage on Hydraulic Press.xml">Oil Leakage on Hydraulic Press</li>
+                                    <li class="document"  data-filename="Fixing Problem Regarding X.xml">Fixing Problem Regarding X</li>
+                                    </ul>
+                                  </li>
                                 <li class="folder">
                                     <span class="folder-name">MPH 1[ID: skd238h-djhss-3skjf]</span>
                                     <ul id="documentList">
-                                      <li class="document"  data-filename="Fixing Problem Regarding X.xml">Fixing Problem Regarding X</li>
+                                      
                                       <li class="document" data-filename="Oil Changing.xml">Oil Changing</li>
-                                      <li class="document" data-filename="Fixing Problem Regarding Oil Leakage on Hydraulic Press.xml">Oil Leakage on Hydraulic Press</li>
                                     
                                     </ul>
                                   </li>
@@ -354,73 +371,140 @@
             </li>
           </ul>
           <ul id="search-results" style="list-style-type: none; padding-left: 0;"></ul>
-        </div>
-      </div>
-      
-   
-    <!-- Right Panel -->
-    <div class="col-md-8 ">
-        <div class="documentDIV" id="doc">
-          <h2 class="h4 mb-2">Won't start</h2>
-          <div class="text-muted small ">20/7/2025 – macine x, assembly line y, factory z, Horsens, Denmark – 13:05</div>
-          <div class="text-muted small mb-4">Author: Bob Jørgensen</div>
-          <div class="text-muted small mb-4">#lubricant-level #oil-sample #emergency-contact #maintenance-history #root-cause-analysis #machine-up-time #system-backup #cleaning-schedule #control-panel #reboot-required #temperature-log #daily-check #weekly-inspection #alignment-check #software-diagnostics </div>
-    
-          <div class="text-line row"></div>
-          <div class="text-line row"></div>
-          <div class="text-line row"></div>
-          <div class="text-line row"></div>
-          <div class="text-line row"></div>
-    <br/>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="media-box w-100"></div>
-              <div class="small text-muted">13:10</div>
-            </div>
-            <div class="col-md-4">
-              <div class="media-box w-100"></div>
-              <div class="small text-muted">13:11</div>
-            </div>
-            <div class="col-md-4">
-              <div class="media-box w-100"></div>
-              <div class="small text-muted">13:11</div>
-            </div>
-          </div>
-          <br/>
-          <div class="text-line row"></div>
-          <div class="text-line row"></div>
-          <div class="text-line row"></div>
-          <div class="text-line row"></div>
-          <div class="text-line row"></div>
-          <div class="text-line row"></div>
-          <div class="text-line row"></div>
-          <br/>
-          <div class="mx-auto"  style="height: 350px; width: 550px; background-color: #3a3a3a;
-          border: 1px solid #555;" ></div>
-           <br/>
-           <div class="text-line row"></div>
-           <div class="text-line row"></div>
-           <div class="text-line row"></div>
-           <div class="text-line row"></div>
-           <div class="text-line row"></div>
-           <div class="text-line row"></div>
-           <div class="text-line row"></div>
-           <div class="text-line row"></div>
-           <div class="text-line row"></div>
-           <div class="text-line row"></div>
-           <br/>
-           <div class="text-line row"></div>
-           <div class="text-line row"></div>
-           <div class="text-line row"></div>
-           <div class="text-line row"></div>
-           <div class="text-line row"></div>
-           <div class="text-line row"></div>
-           <div class="text-line row"></div>
-    </div>
-</div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="col-md-8 col-lg-9 main-content">
+        <div class="content-container documentDIV" id="doc">
+            
+<h2 class="h4 mb-2">Hydraulic Oil Leakage</h2>
+<div class="text-muted small">20/7/2025 – Machine HP-200, Assembly Line 3, Factory Z, Horsens, Denmark – 13:05</div>
+<div class="text-muted small mb-4">Documented by: Bob Jørgensen</div>
+<div class="text-muted small mb-4">
+#hydraulic-system 
+#oil-leak 
+#maintenance-process 
+#component-failure 
+#inspection-protocol 
+#root-cause 
+#corrective-action 
+#downtime 
+#replacement-procedure 
+#hose-fitting 
+#fatigue-crack 
+#vibration-check 
+#temperature-log 
+#fluid-pressure 
+#safety-shutdown 
+#actuator-leak 
+#preventive-maintenance 
+#component-inspection 
+#machine-uptime 
+#system-stability 
+#industrial-sealant 
+#inventory-usage 
+#post-repair-verification 
+#incident-followup 
+#repair-status 
+#material-fatigue 
+#batch-issue 
+#maintenance-logs 
+#maintenance-recommendation 
+#technical-note 
+#inspection-update 
+#hose-replacement 
+#failure-pattern 
+#machine-status 
+#site-inspection 
+#technician-report 
+#environmental-logs 
+#visual-evidence 
+#operational-integrity 
+#repair-confirmation 
+#revised-inspection-protocol</div>
+
+<!-- Problem Identification -->
+<div class="mb-4">
+  <h5><strong>Problem Identification</strong></h5>
+  At approximately 13:05, a routine sensor alert indicated a 30% drop in hydraulic pressure in the HP-200 press unit. Upon physical inspection, maintenance staff identified a visible stream of oil seeping from the lower rear section of the actuator housing. The surrounding area showed light pooling and trace spray patterns on the machine frame, suggesting a pressurized leak.
+
+  <div class="media-box my-3 mx-auto" style="width: 400px; height: 250px;">
+    <img src="leak_point_photo.jpg" alt="Leakage Point Photo" class="img-fluid rounded border"/>
   </div>
+  <div class="small text-muted mt-1">Leak site overview – taken at 13:10</div>
+
+  The leak was active but not catastrophic, and the decision was made to proceed with a controlled shutdown to minimize further damage.
 </div>
-<script>
+
+<!-- Containment Measures -->
+<div class="mb-4">
+  <h5><strong>Containment Measures</strong></h5>
+  Within 5 minutes of detection, the press was transitioned into safe shutdown mode via the local control panel. Oil collection mats were deployed and the leak area was wiped clean to allow visual inspection of the failure point. A temporary industrial-grade epoxy sealant was applied to the fitting as a preventive measure while sourcing the replacement part.
+
+  <div class=" mx-auto my-3" style="width: 500px; height: 230px;">
+    <video controls class="w-100 rounded border">
+      <source src="leak_video_clip.mp4" type="video/mp4">
+    </video>
+  </div>
+ 
+</div>
+ <div class="small text-muted mt-1">Short clip showing fluid under pressure – captured 13:11</div>
+<!-- Root Cause Analysis -->
+<div class="mb-4">
+  <h5><strong>Root Cause Analysis</strong></h5>
+  Disassembly of the affected area revealed a crack in the metal coupling on the secondary hydraulic hose. Visual and tactile examination indicated fatigue-related stress fractures around the threads. Maintenance records from March and May 2025 had flagged early wear on similar components but no replacements had yet been scheduled.
+
+  <div class="media-box my-3 mx-auto" style="width: 400px; height: 250px;">
+    <img src="cracked_fitting_closeup.jpg" alt="Cracked Fitting Close-Up" class="img-fluid rounded border"/>
+  </div>
+  <div class="small text-muted mt-1">Close-up of cracked metal fitting – documented during inspection</div>
+
+  This is now the third known failure of this hose type in 6 months, which indicates a recurring design or materials issue. Component sourcing will be reviewed.
+</div>
+
+<!-- Corrective Action -->
+<div class="mb-4">
+  <h5><strong>Corrective Action</strong></h5>
+  A new fitting was ordered from on-site inventory with expected delivery at 15:00. The technician cleaned and prepped the hose threads and actuator port for installation. All fittings within the same pressure line were visually inspected, and two additional fittings were marked for preventive replacement during the next scheduled maintenance window.
+</div>
+
+<!-- Verification -->
+<div class="mb-4">
+  <h5><strong>Verification</strong></h5>
+  A check of vibration and temperature logs from the past 48 hours showed no external abnormalities that could have contributed to the failure. After installing the new part, the system was repressurized and monitored for 30 minutes. All pressure readings returned to nominal values with no visible fluid loss.
+</div>
+
+<!-- Documentation & Follow-Up -->
+<div class="mb-4">
+  <h5><strong>Documentation & Follow-Up</strong></h5>
+  Maintenance records have been updated in the internal system, and this incident has been flagged for review during the next maintenance strategy review. The inspection protocol for HP-200 class presses was updated to include a monthly check of secondary hose couplings and a quarterly ultrasound inspection of metal fatigue points.
+
+  A follow-up inspection has been scheduled for 21/7/2025 to verify the stability of the repaired section under full operational load.
+</div>
+
+<!-- Technician Note -->
+<div class="mb-4">
+  <h5><strong>Technician Note</strong></h5>
+  <em>“This failure mode is becoming increasingly common with the current hose spec. Recommend switching to reinforced threaded couplings with vibration resistance on all HP-series units. Also consider stocking spares for all secondary lines.”</em>
+</div>
+
+<!-- Status -->
+<div class="mb-3">
+  <h5><strong>Status Summary</strong></h5>
+  Status: <strong>In Progress</strong><br/>
+  Estimated Downtime: 2 hours<br/>
+  Replacement Fitting: Arrived 15:05<br/>
+  Supervisor Notified: Yes<br/>
+  Logged for Maintenance Review: Yes
+</div>
+
+         </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
     document.addEventListener('DOMContentLoaded', function () {
       const folders = document.querySelectorAll('.folder-name');
       folders.forEach(folder => {
@@ -545,6 +629,5 @@ document.getElementById('search-input').addEventListener('input', function() {
         }
     });
 </script>
-
 </body>
 </html>
