@@ -1,0 +1,218 @@
+<content>
+<title>Fixing Problem Regarding Oil Leakage on Hydraulic Press</title>
+  <path> Denmark, Factory X, Production Line 1, MPH1</path>
+  <tags>
+    <tag>8mm-screw</tag>
+<tag>maintenance</tag>
+<tag>safety-protocol</tag>
+<tag>pressure-test</tag>
+<tag>emergency-shutdown</tag>
+<tag>vibration-issues</tag>
+<tag>service-report</tag>
+<tag>filter-replacement</tag>
+<tag>wear-and-tear</tag>
+<tag>power-outage</tag>
+  </tags>
+  <html><![CDATA[
+<h2 class="h4 mb-2">Oil Leakage on Hydraulic Press</h2>
+<div class="text-muted small ">20/7/2025 – Machine HP-200, Assembly Line 3, Factory Z, Horsens, Denmark – 13:05</div>
+<div class="text-muted small mb-4">Author: Bob Jørgensen</div>
+<div class="text-muted small mb-4">#oil-leak #hydraulic-system #pressure-drop #maintenance-history #root-cause-analysis #daily-check #cleaning-schedule #temperature-log #machine-up-time #safety-check #replacement-needed</div>
+
+<div>During the routine inspection of the HP-200 unit, a significant drop in hydraulic pressure was observed. The pressure reading fell 30% below the safe operational threshold, prompting an immediate investigation. Upon approach, oil was visibly leaking from the rear actuator assembly.</div>
+
+<div>Visual inspection confirmed that the fluid was hydraulic oil, likely ISO VG 46 based on consistency and color. The source of the leak was quickly identified—a cracked metal fitting on the secondary hose line, likely due to prolonged wear or pressure fatigue. This component had previously been noted as borderline during a March inspection but had not yet been replaced.</div>
+
+<br/>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="media-box w-100">
+      <img src="leak_point_photo.jpg" alt="Leakage Point Photo" class="img-fluid"/>
+    </div>
+    <div class="small text-muted">13:10</div>
+  </div>
+  <div class="col-md-4">
+    <div class="media-box w-100">
+      <video controls class="w-100"><source src="leak_video_clip.mp4" type="video/mp4"></video>
+    </div>
+    <div class="small text-muted">13:11</div>
+  </div>
+  <div class="col-md-4">
+    <div class="media-box w-100">
+      <img src="cracked_fitting_closeup.jpg" alt="Cracked Fitting Close-Up" class="img-fluid"/>
+    </div>
+    <div class="small text-muted">13:11</div>
+  </div>
+</div>
+
+<br/>
+
+<div>After isolating the issue, the hydraulic system was shut down, and a temporary sealant was applied to limit further leakage. A replacement fitting was requested from inventory, with estimated arrival by 15:00. A maintenance log entry was created, and the incident was flagged for review during the monthly safety audit.</div>
+
+<div>Historical logs indicate two similar failures on this machine in the past 6 months, suggesting a recurring weakness in the current hose design or fitting specification. It may be necessary to evaluate a reinforced or upgraded component as part of a broader reliability improvement effort.</div>
+
+<div>Ambient temperature and vibration logs were reviewed to rule out environmental causes. No anomalies were detected in either metric leading up to the failure.</div>
+
+<br/>
+
+<div class="mx-auto"  style="height: 350px; width: 550px; background-color: #3a3a3a;
+border: 1px solid #555;">
+  <iframe width="550" height="350" src="https://example.com/3d-model-hp200?highlight=rear-actuator" title="HP-200 Component View" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<br/>
+
+<div>Technician note (voice transcribed): “Recommend replacing not only the cracked fitting but inspecting all other joints under the same pressure load. We may be facing a batch-related durability issue.”</div>
+
+<div>The task has been marked as 'In Progress', and the maintenance supervisor has been notified. Estimated downtime for this unit is two hours. Updated inspection protocols will include monthly hose integrity scans and stress-point monitoring.</div>
+<br/>
+<hr/>
+<br/>
+<h2 class="h4 mb-2">Fixing Problem Regarding Oil Leakage on Hydraulic Press</h2>
+<div class="text-muted small">20/7/2025 – Machine HP-200, Assembly Line 3, Factory Z, Horsens, Denmark – 13:05</div>
+<div class="text-muted small mb-4">Author: Bob Jørgensen</div>
+<div class="text-muted small mb-4">
+  #oil-leak #hydraulic-system #pressure-drop #maintenance-history #root-cause-analysis
+  #daily-check #cleaning-schedule #temperature-log #machine-up-time #safety-check #replacement-needed
+</div>
+
+<div class="mb-3">
+  <strong>Initial Observation:</strong><br/>
+  During a routine check, a significant pressure drop (approx. 30%) was observed in the hydraulic system of the HP-200 unit. Immediate inspection revealed an oil leak from the rear actuator housing.
+</div>
+
+<div class="mb-3">
+  <strong>Inspection & Diagnosis:</strong><br/>
+  The leaking fluid was confirmed to be hydraulic oil. Closer inspection traced the issue to a cracked metal fitting on the secondary hose line. This fitting had shown signs of wear in a previous inspection (March 2025) but had not yet been replaced.
+</div>
+
+<br/>
+
+<div class="row mb-4">
+  <div class="col-md-4">
+    <div class="media-box w-100 mb-1">
+      <img src="leak_point_photo.jpg" alt="Leakage Point Photo" class="img-fluid rounded border"/>
+    </div>
+    <div class="small text-muted">13:10 – Leak site overview</div>
+  </div>
+  <div class="col-md-4">
+    <div class="media-box w-100 mb-1">
+      <video controls class="w-100 rounded border">
+        <source src="leak_video_clip.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="small text-muted">13:11 – Fluid flow under pressure</div>
+  </div>
+  <div class="col-md-4">
+    <div class="media-box w-100 mb-1">
+      <img src="cracked_fitting_closeup.jpg" alt="Cracked Fitting Close-Up" class="img-fluid rounded border"/>
+    </div>
+    <div class="small text-muted">13:11 – Close-up of damaged fitting</div>
+  </div>
+</div>
+
+<div class="mb-3">
+  <strong>Immediate Actions Taken:</strong><br/>
+  The hydraulic unit was safely shut down and a temporary sealant applied to minimize further leakage. A replacement fitting was ordered from stock (ETA: 15:00), and the maintenance log was updated. Downtime is expected to be under 2 hours.
+</div>
+
+<div class="mb-3">
+  <strong>Root Cause Consideration:</strong><br/>
+  Based on historical data, this marks the third incident on this hose type within 6 months. It may indicate a design weakness or a bad batch. A review of component sourcing and upgrade options is recommended.
+</div>
+
+<div class="mb-3">
+  <strong>Environmental Factors:</strong><br/>
+  Ambient temperature and vibration logs from the past 48 hours show no abnormalities. External causes are unlikely.
+</div>
+
+<br/>
+
+<div class="mx-auto mb-4" style="height: 350px; width: 550px; background-color: #3a3a3a;
+border: 1px solid #555;">
+  <iframe width="550" height="350" src="https://example.com/3d-model-hp200?highlight=rear-actuator"
+    title="HP-200 Component View" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<div class="mb-3">
+  <em>Technician Note:</em><br/>
+  “Recommend replacing not only the cracked fitting but inspecting all other joints under similar pressure. May be a systemic material fatigue issue.”
+</div>
+
+<div class="mb-4">
+  Task status has been marked as <strong>“In Progress”</strong>. Supervisor notified. Inspection protocol will be updated to include monthly hose integrity checks. Logged for review in the upcoming safety and maintenance review.
+</div>
+<br/>
+<hr/>
+<br/>
+<h2 class="h4 mb-2">Hydraulic Oil Leakage – Incident Resolution Process</h2>
+<div class="text-muted small">20/7/2025 – Machine HP-200, Assembly Line 3, Factory Z, Horsens, Denmark – 13:05</div>
+<div class="text-muted small mb-4">Documented by: Bob Jørgensen</div>
+<div class="text-muted small mb-4">
+  #hydraulic-system #oil-leak #maintenance-process #component-failure #inspection-protocol #root-cause #corrective-action #downtime #replacement-procedure
+</div>
+
+<!-- Problem Identification -->
+<div class="mb-3">
+  <h5><strong>1. Problem Identification</strong></h5>
+  A pressure drop of approximately 30% was detected in the hydraulic circuit of the HP-200 press. A physical inspection revealed visible oil leakage originating from the rear actuator housing.
+</div>
+
+<!-- Containment Measures -->
+<div class="mb-3">
+  <h5><strong>2. Containment Measures</strong></h5>
+  The machine was placed in safe shutdown mode to prevent further fluid loss. A temporary industrial-grade sealant was applied to limit leakage until permanent repair could be executed.
+</div>
+
+<!-- Root Cause Analysis -->
+<div class="mb-3">
+  <h5><strong>3. Root Cause Analysis</strong></h5>
+  The leak was traced to a cracked metal fitting on the secondary hydraulic hose. The component showed signs of material fatigue. Two prior failures of similar fittings on this machine were documented earlier in 2025, suggesting a systemic issue with the current component batch or design.
+</div>
+
+<!-- Corrective Action -->
+<div class="mb-3">
+  <h5><strong>4. Corrective Action</strong></h5>
+  A replacement fitting was ordered from inventory (ETA: 15:00 same day). Technician prepared hose for replacement. All adjacent fittings were visually inspected for early signs of wear or stress.
+</div>
+
+<!-- Verification -->
+<div class="mb-3">
+  <h5><strong>5. Verification</strong></h5>
+  Environmental logs (temperature and vibration) for the previous 48 hours showed no anomalies. This rules out external contributing factors. Pressure logs were validated post-repair to ensure operational stability.
+</div>
+
+<!-- Documentation & Follow-Up -->
+<div class="mb-3">
+  <h5><strong>6. Documentation & Follow-Up</strong></h5>
+  Maintenance records have been updated. A follow-up inspection is scheduled for 21/7/2025 to verify the integrity of the replaced component. Inspection protocol was revised to include monthly checks of all secondary hose fittings.
+</div>
+
+<!-- Media Evidence -->
+<h5><strong>7. Media Evidence</strong></h5>
+<div class="row mb-4">
+  <div class="col-md-4">
+    <div class="media-box w-100 mb-1">
+      <img src="leak_point_photo.jpg" alt="Leakage Point Photo" class="img-fluid rounded border"/>
+    </div>
+    <div class="small text-muted">Leak site overview – 13:10</div>
+  </div>
+  <div class="col-md-4">
+    <div class="media-box w-100 mb-1">
+      <video controls class="w-100 rounded border">
+        <source src="leak_video_clip.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="small text-muted">Fluid behavior under pressure – 13:11</div>
+  </div>
+  <div class="col-md-4">
+    <div class="media-box w-100 mb-1">
+      <img src="cracked_fitting_closeup.jpg" alt="Cracked Fitting Close-Up" class="img-fluid rounded border"/>
+    </div>
+    <div class="small text-muted">Close-up of damaged fitting – 13:11</div>
+  </div>
+</div>
+
+  ]]></html>
+</content>

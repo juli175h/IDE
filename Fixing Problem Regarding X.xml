@@ -1,0 +1,78 @@
+<content>
+  <title>Fixing Problem Regarding X</title>
+  <path> Denmark, Factory X, Production Line 1, MPH1</path>
+  <tags>
+    <tag>lubricant-level</tag>
+<tag>oil-sample</tag>
+<tag>emergency-contact</tag>
+<tag>maintenance-history</tag>
+<tag>root-cause-analysis</tag>
+<tag>machine-up-time</tag>
+<tag>system-backup</tag>
+<tag>cleaning-schedule</tag>
+<tag>control-panel</tag>
+<tag>reboot-required</tag>
+<tag>temperature-log</tag>
+<tag>daily-check</tag>
+<tag>weekly-inspection</tag>
+<tag>alignment-check</tag>
+<tag>software-diagnostics</tag>
+</tags>
+  <html><![CDATA[
+    <h2 class="h4 mb-2">Fixing Problem Regarding X</h2>
+      <div class="text-muted small ">20/7/2025 – macine x, assembly line y, factory z, Horsens, Denmark – 13:05</div>
+      <div class="text-muted small mb-4">Author: Bob Jørgensen</div>
+      <div class="text-muted small mb-4">#lubricant-level #oil-sample #emergency-contact #maintenance-history #root-cause-analysis #machine-up-time #system-backup #cleaning-schedule #control-panel #reboot-required #temperature-log #daily-check #weekly-inspection #alignment-check #software-diagnostics </div>
+
+      <div class="text-line row"></div>
+      <div class="text-line row"></div>
+      <div class="text-line row"></div>
+      <div class="text-line row"></div>
+      <div class="text-line row"></div>
+<br/>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="media-box w-100"></div>
+          <div class="small text-muted">13:10</div>
+        </div>
+        <div class="col-md-4">
+          <div class="media-box w-100"></div>
+          <div class="small text-muted">13:11</div>
+        </div>
+        <div class="col-md-4">
+          <div class="media-box w-100"></div>
+          <div class="small text-muted">13:11</div>
+        </div>
+      </div>
+      <br/>
+      <div class="text-line row"></div>
+      <div class="text-line row"></div>
+      <div class="text-line row"></div>
+      <div class="text-line row"></div>
+      <div class="text-line row"></div>
+      <div class="text-line row"></div>
+      <div class="text-line row"></div>
+      <br/>
+      <div class="mx-auto"  style="height: 350px; width: 550px; background-color: #3a3a3a;
+      border: 1px solid #555;" ></div>
+       <br/>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <br/>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+  ]]></html>
+</content>

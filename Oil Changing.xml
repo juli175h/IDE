@@ -1,0 +1,88 @@
+<content>
+<title>Oil Changing</title>
+  <path> Denmark, Factory X, Production Line 1, MPH1</path>
+  <tags>
+    <tag>8mm-screw</tag>
+<tag>maintenance</tag>
+<tag>safety-protocol</tag>
+<tag>pressure-test</tag>
+<tag>emergency-shutdown</tag>
+<tag>vibration-issues</tag>
+<tag>service-report</tag>
+<tag>filter-replacement</tag>
+<tag>wear-and-tear</tag>
+<tag>power-outage</tag>
+  </tags>
+  <html><![CDATA[
+    <h2 class="h4 mb-2">Oil Changing</h2>
+      <div class="text-muted small ">13/5/2022 – macine x, assembly line y, factory z, Horsens, Denmark – 13:05</div>
+       <div class="text-muted small mb-4">Author: Andrew Smith</div>
+      <div class="text-muted small mb-4">#8mm-screw #maintenance #safety-protocol #pressure-test #emergency-shutdown #vibration-issues #service-report #filter-replacement #wear-and-tear #power-outage</div>
+     
+
+      <div class="text-line row"></div>
+      <div class="text-line row"></div>
+      <div class="text-line row"></div>
+<br/>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="media-box w-100"></div>
+          <div class="small text-muted">13:10</div>
+        </div>
+        <div class="col-md-6">
+          <div class="media-box w-100"></div>
+          <div class="small text-muted">13:11</div>
+        </div>
+      </div>
+      <br/>
+      <div class="text-line row"></div>
+      <div class="text-line row"></div>
+      <div class="text-line row"></div>
+      <div class="text-line row"></div>
+      <br/>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="media-box w-100"></div>
+          <div class="small text-muted">13:10</div>
+        </div>
+        <div class="col-md-4">
+          <div class="media-box w-100"></div>
+          <div class="small text-muted">13:11</div>
+        </div>
+        <div class="col-md-4">
+          <div class="media-box w-100"></div>
+          <div class="small text-muted">13:11</div>
+        </div>
+      </div>
+      <br/>
+         <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <br/>
+      <div class="mx-auto"  style="height: 350px; width: 550px; background-color: #3a3a3a;
+      border: 1px solid #555;" ></div>
+       <br/>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <br/>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+       <div class="text-line row"></div>
+  ]]></html>
+</content>

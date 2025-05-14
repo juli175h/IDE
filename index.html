@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IDE AI PIN</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Soft dark background and text */
+    body {
+      background-color: #2b2b2b;
+      color: #e0e0e0;
+      padding: 0px;
+    }
+
+    .documentDIV {
+    margin: 10px,10px,0px,10px;
+    padding: 60px;
+    border: 2px solid #1c1c1c;
+    border-radius: 30px;
+    height: 620px;
+    overflow-y: scroll;
+    
+}
+.documentDIV::-webkit-scrollbar {
+    width: 10px;
+}
+
+.documentDIV::-webkit-scrollbar-track {
+    background: #1c1c1c;
+    border-radius: 10px;
+}
+
+.documentDIV::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+.documentDIV::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+    .media-box {
+      height: 150px;
+      background-color: #3a3a3a;
+      border: 1px solid #555;
+    }
+    
+
+    .text-line {
+      height: 10px;
+      background-color: #555;
+      margin-bottom: 10px;
+    }
+
+    .vertical-line {
+      border-left: 2px solid #777;
+      height: 100%;
+      margin: 0 auto;
+    }
+
+    .form-control, .btn {
+      background-color: #3b3b3b;
+      color: #e0e0e0;
+      border-color: #666;
+    }
+
+    .form-control::placeholder {
+      color: #bbb;
+    }
+
+    .btn-outline-secondary {
+      border-color: #888;
+      color: #ddd;
+    }
+
+    .btn-outline-secondary:hover {
+      background-color: #4c4c4c;
+    }
+
+    .text-muted {
+      color: #aaa !important;
+    }
+
+    .file-tree {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.file-tree li {
+  margin: 5px 0;
+}
+
+.folder-name {
+  cursor: pointer;
+  font-weight: bold;
+  display: block;
+  color: #e0e0e0;
+}
+
+.folder > ul {
+  display: none;
+  padding-left: 20px;
+}
+
+.folder.open > ul {
+  display: block;
+}
+
+.document a {
+  color: #bbb;
+  text-decoration: none;
+}
+
+.document a:hover {
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+<body class="p-4">
+  <!-- Content Section -->
+  <div class="row g-4">
+    <!-- Left Panel -->
+    <div class="col-md-4">
+        <div class="d-flex flex-column align-items-start" style="max-width: 400px; width: 100%;">
+            <div class="input-group mb-3" style="width: 100%;">
+                <input type="text" class="form-control" id="search-input" placeholder="Search">
+                <button class="btn btn-outline-secondary">🔍</button>
+            </div>
+            
+          <!-- Tree structure -->
+          <ul class="file-tree w-100" id="file-tree">
+            <li class="folder open">
+              <span class="folder-name">Denmark</span>
+              <ul>
+                <li class="folder">
+                  <span class="folder-name">Horsens</span>
+                  <ul>
+                    <li class="folder">
+                        <span class="folder-name">Factory X</span>
+                        <ul>
+                            <li class="folder">
+                            <span class="folder-name">Production Line 1</span>
+                            <ul>
+                                <li class="folder">
+                                    <span class="folder-name">MPH 1[ID: skd238h-djhss-3skjf]</span>
+                                    <ul id="documentList">
+                                      <li class="document"  data-filename="Fixing Problem Regarding X.xml">Fixing Problem Regarding X</li>
+                                      <li class="document" data-filename="Oil Changing.xml">Oil Changing</li>
+                                      <li class="document" data-filename="Fixing Problem Regarding Oil Leakage on Hydraulic Press.xml">Oil Leakage on Hydraulic Press</li>
+                                    
+                                    </ul>
+                                  </li>
+                                  <li class="folder">
+                                    <span class="folder-name">MPH 2[ID: kdls73-sc7f8-sdjh3]</span>
+                                    <ul>
+                                      <li class="document"><a href="#">Doc</a></li>
+                                      <li class="document"><a href="#">Doc</a></li>
+                                    </ul>
+                                  </li>
+                                  
+                            </ul>
+                        </li>
+                        <li class="folder">
+                            <span class="folder-name">Production Line 2</span>
+                            <ul>
+                                <li class="folder">
+                                    <span class="folder-name">MPH 3: [ID: nm34nj-dgf34-2jbhk]</span>
+                                    <ul id="documentList">
+                                      <li class="document"  data-filename="Fixing Problem Regarding X.xml">Fixing Problem Regarding X</li>
+                                      <li class="document" data-filename="Fixing Problem Regarding Y.xml">Fixing Problem Regarding Y</li>
+                                      <li class="document"><a href="#">Doc</a></li>
+                                    </ul>
+                                  </li>
+                                  <li class="folder">
+                                    <span class="folder-name">MX extracter 1 [ID: aaj238h-djs3s-82bjjf]</span>
+                                    <ul>
+                                      <li class="document"><a href="#">Doc</a></li>
+                                      <li class="document"><a href="#">Doc</a></li>
+                                    </ul>
+                                  </li>
+                                  
+                            </ul>
+                        </li>
+                        </ul>
+                      </li>
+                      <li class="folder">
+                        <span class="folder-name">Factory Y</span>
+                        <ul>
+                            <li class="folder">
+                                <span class="folder-name">Machine: skd238h-djhss-3skjf</span>
+                                <ul>
+                                  <li class="document"><a href="#">Doc</a></li>
+                                  <li class="document"><a href="#">Doc</a></li>
+                                </ul>
+                              </li>
+                              <li class="folder">
+                                <span class="folder-name">Machine: aaj238h-djs3s-82bjjf</span>
+                                <ul>
+                                  <li class="document"><a href="#">Doc</a></li>
+                                  <li class="document"><a href="#">Doc</a></li>
+                                </ul>
+                              </li>
+                        </ul>
+                      </li>
+                      <li class="folder">
+                        <span class="folder-name">Factory Z</span>
+                        <ul>
+                            <li class="folder">
+                                <span class="folder-name">Machine: skd238h-djhss-3skjf</span>
+                                <ul>
+                                  <li class="document"><a href="#">Doc</a></li>
+                                  <li class="document"><a href="#">Doc</a></li>
+                                </ul>
+                              </li>
+                              <li class="folder">
+                                <span class="folder-name">Machine: aaj238h-djs3s-82bjjf</span>
+                                <ul>
+                                  <li class="document"><a href="#">Doc</a></li>
+                                  <li class="document"><a href="#">Doc</a></li>
+                                </ul>
+                              </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="folder">
+                  <span class="folder-name">Vejle</span>
+                  <ul>
+                    <li class="folder">
+                        <span class="folder-name">Factory X</span>
+                        <ul>
+                            <li class="folder">
+                                <span class="folder-name">Machine: skd238h-djhss-3skjf</span>
+                                <ul>
+                                  <li class="document"><a href="#">Doc</a></li>
+                                  <li class="document"><a href="#">Doc</a></li>
+                                </ul>
+                              </li>
+                              <li class="folder">
+                                <span class="folder-name">Machine: aaj238h-djs3s-82bjjf</span>
+                                <ul>
+                                  <li class="document"><a href="#">Doc</a></li>
+                                  <li class="document"><a href="#">Doc</a></li>
+                                </ul>
+                              </li>
+                        </ul>
+                      </li>
+                      <li class="folder">
+                        <span class="folder-name">Factory Y</span>
+                        <ul>
+                            <li class="folder">
+                                <span class="folder-name">Machine: skd238h-djhss-3skjf</span>
+                                <ul>
+                                  <li class="document"><a href="#">Doc</a></li>
+                                  <li class="document"><a href="#">Doc</a></li>
+                                </ul>
+                              </li>
+                              <li class="folder">
+                                <span class="folder-name">Machine: aaj238h-djs3s-82bjjf</span>
+                                <ul>
+                                  <li class="document"><a href="#">Doc</a></li>
+                                  <li class="document"><a href="#">Doc</a></li>
+                                </ul>
+                              </li>
+                        </ul>
+                      </li>
+                      <li class="folder">
+                        <span class="folder-name">Factory Z</span>
+                        <ul>
+                            <li class="folder">
+                                <span class="folder-name">Machine: skd238h-djhss-3skjf</span>
+                                <ul>
+                                  <li class="document"><a href="#">Doc</a></li>
+                                  <li class="document"><a href="#">Doc</a></li>
+                                </ul>
+                              </li>
+                              <li class="folder">
+                                <span class="folder-name">Machine: aaj238h-djs3s-82bjjf</span>
+                                <ul>
+                                  <li class="document"><a href="#">Doc</a></li>
+                                  <li class="document"><a href="#">Doc</a></li>
+                                </ul>
+                              </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="folder">
+                    <span class="folder-name">Copenhagen</span>
+                    <ul>
+                        <li class="folder">
+                            <span class="folder-name">Factory X</span>
+                            <ul>
+                                <li class="folder">
+                                    <span class="folder-name">Machine: skd238h-djhss-3skjf</span>
+                                    <ul>
+                                      <li class="document"><a href="#">Doc</a></li>
+                                      <li class="document"><a href="#">Doc</a></li>
+                                    </ul>
+                                  </li>
+                                  <li class="folder">
+                                    <span class="folder-name">Machine: aaj238h-djs3s-82bjjf</span>
+                                    <ul>
+                                      <li class="document"><a href="#">Doc</a></li>
+                                      <li class="document"><a href="#">Doc</a></li>
+                                    </ul>
+                                  </li>
+                            </ul>
+                          </li>
+                          <li class="folder">
+                            <span class="folder-name">Factory Y</span>
+                            <ul>
+                                <li class="folder">
+                                    <span class="folder-name">Machine: skd238h-djhss-3skjf</span>
+                                    <ul>
+                                      <li class="document"><a href="#">Doc</a></li>
+                                      <li class="document"><a href="#">Doc</a></li>
+                                    </ul>
+                                  </li>
+                                  <li class="folder">
+                                    <span class="folder-name">Machine: aaj238h-djs3s-82bjjf</span>
+                                    <ul>
+                                      <li class="document"><a href="#">Doc</a></li>
+                                      <li class="document"><a href="#">Doc</a></li>
+                                    </ul>
+                                  </li>
+                            </ul>
+                          </li>
+                          <li class="folder">
+                            <span class="folder-name">Factory Z</span>
+                            <ul>
+                                <li class="folder">
+                                    <span class="folder-name">Machine: skd238h-djhss-3skjf</span>
+                                    <ul>
+                                      <li class="document"><a href="#">Doc</a></li>
+                                      <li class="document"><a href="#">Doc</a></li>
+                                    </ul>
+                                  </li>
+                                  <li class="folder">
+                                    <span class="folder-name">Machine: aaj238h-djs3s-82bjjf</span>
+                                    <ul>
+                                      <li class="document"><a href="#">Doc</a></li>
+                                      <li class="document"><a href="#">Doc</a></li>
+                                    </ul>
+                                  </li>
+                            </ul>
+                          </li>
+                    </ul>
+                  </li>
+              </ul>
+            </li>
+          </ul>
+          <ul id="search-results" style="list-style-type: none; padding-left: 0;"></ul>
+        </div>
+      </div>
+      
+   
+    <!-- Right Panel -->
+    <div class="col-md-8 ">
+        <div class="documentDIV" id="doc">
+          <h2 class="h4 mb-2">Won't start</h2>
+          <div class="text-muted small ">20/7/2025 – macine x, assembly line y, factory z, Horsens, Denmark – 13:05</div>
+          <div class="text-muted small mb-4">Author: Bob Jørgensen</div>
+          <div class="text-muted small mb-4">#lubricant-level #oil-sample #emergency-contact #maintenance-history #root-cause-analysis #machine-up-time #system-backup #cleaning-schedule #control-panel #reboot-required #temperature-log #daily-check #weekly-inspection #alignment-check #software-diagnostics </div>
+    
+          <div class="text-line row"></div>
+          <div class="text-line row"></div>
+          <div class="text-line row"></div>
+          <div class="text-line row"></div>
+          <div class="text-line row"></div>
+    <br/>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="media-box w-100"></div>
+              <div class="small text-muted">13:10</div>
+            </div>
+            <div class="col-md-4">
+              <div class="media-box w-100"></div>
+              <div class="small text-muted">13:11</div>
+            </div>
+            <div class="col-md-4">
+              <div class="media-box w-100"></div>
+              <div class="small text-muted">13:11</div>
+            </div>
+          </div>
+          <br/>
+          <div class="text-line row"></div>
+          <div class="text-line row"></div>
+          <div class="text-line row"></div>
+          <div class="text-line row"></div>
+          <div class="text-line row"></div>
+          <div class="text-line row"></div>
+          <div class="text-line row"></div>
+          <br/>
+          <div class="mx-auto"  style="height: 350px; width: 550px; background-color: #3a3a3a;
+          border: 1px solid #555;" ></div>
+           <br/>
+           <div class="text-line row"></div>
+           <div class="text-line row"></div>
+           <div class="text-line row"></div>
+           <div class="text-line row"></div>
+           <div class="text-line row"></div>
+           <div class="text-line row"></div>
+           <div class="text-line row"></div>
+           <div class="text-line row"></div>
+           <div class="text-line row"></div>
+           <div class="text-line row"></div>
+           <br/>
+           <div class="text-line row"></div>
+           <div class="text-line row"></div>
+           <div class="text-line row"></div>
+           <div class="text-line row"></div>
+           <div class="text-line row"></div>
+           <div class="text-line row"></div>
+           <div class="text-line row"></div>
+    </div>
+</div>
+  </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const folders = document.querySelectorAll('.folder-name');
+      folders.forEach(folder => {
+        folder.addEventListener('click', function () {
+          this.parentElement.classList.toggle('open');
+        });
+      });
+    });
+  </script>
+  <script>
+    document.getElementById('documentList').addEventListener('click', function(e) {
+      if (e.target && e.target.nodeName === 'LI') {
+        const fileName = e.target.getAttribute('data-filename');
+        
+        fetch(fileName)
+          .then(response => {
+            if (!response.ok) throw new Error('Error finding document');
+            return response.text();
+          })
+          .then(str => (new window.DOMParser()).parseFromString(str, 'text/xml'))
+          .then(data => {
+            const htmlContent = data.getElementsByTagName('html')[0]?.textContent || '<p>No content found</p>';
+            document.getElementById('doc').innerHTML = htmlContent;
+          })
+          .catch(err => {
+            document.getElementById('doc').innerHTML = `<p>Error loading XML: ${err.message}</p>`;
+            console.error('Error loading XML:', err);
+          });
+      }
+    });
+  </script>
+  <script>
+document.getElementById('search-input').addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    
+    // Get the file tree and search results elements
+    const fileTree = document.getElementById('file-tree');
+    const searchResults = document.getElementById('search-results');
+
+    // Clear previous results
+    searchResults.innerHTML = '';
+
+    // If the input is empty, show the file tree and hide search results
+    if (query.trim() === '') {
+        fileTree.style.display = 'block';
+        searchResults.style.display = 'none';
+        return;
+    }
+
+    // Hide the file tree and show the search results
+    fileTree.style.display = 'none';
+    searchResults.style.display = 'block';
+
+    // Define the file paths for XML files
+    const filePaths = [
+        'Fixing Problem Regarding X.xml',
+        'Fixing Problem Regarding Oil Leakage on Hydraulic Press.xml',
+        'Oil Changing.xml'
+    ];
+
+    // Iterate over the files and fetch XML data
+    filePaths.forEach(filePath => {
+        fetch(filePath)
+            .then(response => response.text())
+            .then(xmlString => {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
+                
+                // Extract tags from the XML document
+                const tags = xmlDoc.getElementsByTagName('tag');
+                let matchFound = false;
+
+                // Loop through tags to see if any match the query
+                for (let tag of tags) {
+                    if (tag.textContent.toLowerCase().includes(query)) {
+                        matchFound = true;
+                        break;
+                    }
+                }
+
+                // If a match is found, display the result
+                if (matchFound) {
+                    const title = xmlDoc.getElementsByTagName('title')[0].textContent;
+                    const path = xmlDoc.getElementsByTagName('path')[0].textContent;
+
+                    const listItem = document.createElement('li');
+                    
+
+                    listItem.innerHTML = `<strong>${title}</strong> - ${path}`;
+                    listItem.setAttribute('data-filename', filePath);  // Adding the path as data-filename attribute
+                    searchResults.appendChild(listItem);
+                    const br = document.createElement('br');
+                    searchResults.appendChild(br);
+                }
+            })
+            .catch(error => console.error('Error reading XML file:', error));
+    });
+});
+
+  </script>
+  <script>
+    document.getElementById('search-results').addEventListener('click', function(e) {
+        // Check if the clicked element is part of the list item (title or path)
+        if (e.target && (e.target.nodeName === 'STRONG' || e.target.nodeName === 'SPAN')) {
+            const listItem = e.target.closest('li'); // Get the parent <li> element
+            const fileName = listItem.getAttribute('data-filename'); // Get the data-filename from the <li>
+
+            fetch(fileName)
+                .then(response => {
+                    if (!response.ok) throw new Error('Error finding document');
+                    return response.text();
+                })
+                .then(str => (new window.DOMParser()).parseFromString(str, 'text/xml'))
+                .then(data => {
+                    const htmlContent = data.getElementsByTagName('html')[0]?.textContent || '<p>No content found</p>';
+                    document.getElementById('doc').innerHTML = htmlContent;
+                })
+                .catch(err => {
+                    document.getElementById('doc').innerHTML = `<p>Error loading XML: ${err.message}</p>`;
+                    console.error('Error loading XML:', err);
+                });
+        }
+    });
+</script>
+
+</body>
+</html>
